@@ -10,9 +10,9 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.get("/api/health", (_, res) => res.status(200).json({ status: "ok" }));
-
 app.use("/api/auth", authRoutes);
 app.use("/api/components", trackingRoutes);
+
+app.get("/api/health", (_, res) => res.status(200).json({ status: "ok" }));
 
 export default app;
